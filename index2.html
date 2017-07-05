@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title> Song App</title>
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\saurabh patel\Desktop\html,css\jsproject\css\font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="main2.css">
+
+</head>
+
+
+
+<body>
+
+    <div class="wrapper">
+
+        <section class="welcome-screen hidden">
+
+            <h1> Welcome to Songify </h1>
+
+            <h3> Enter name to access your account </h3>
+
+            <div class="input-wrapper">
+
+                <input type="text" placeholder="Name" id="name-input">
+
+                <button> Go </button>
+
+            </div>
+
+        </section>
+
+        <div class="main">
+
+            <header>
+
+                <div class="right floated user-name"> </div>
+
+            </header>
+
+            <section class="content">
+
+                <audio src="C:\Users\saurabh patel\Desktop\html,css\jsproject\song2.mp3"></audio>
+
+                <div class="list-headers">
+
+        <div> Title </div>
+
+        <div> Artist </div>
+
+        <div> Album </div>
+
+        <div> Duration </div>
+
+        </div>
+
+        <div class="song-list">
+
+        <div class="song">
+
+        <span class="song-name" id="song1"></span>
+
+        <span class="song-artist"></span>
+
+        <span class="song-album"></span>
+
+        <span class="song-length"></span>
+
+        </div>
+        <div class="song">
+
+        <span class="song-name" id="song2"></span>
+
+        <span class="song-artist"></span>
+
+        <span class="song-album"></span>
+
+        <span class="song-length"></span>
+
+        </div>
+        <div class="song">
+
+        <span class="song-name" id="song3"></span>
+
+        <span class="song-artist"></span>
+
+        <span class="song-album"></span>
+
+        <span class="song-length"></span>
+
+        </div>
+        <div class="song">
+
+        <span class="song-name" id="song4"></span>
+
+        <span class="song-artist"></span>
+
+        <span class="song-album"></span>
+
+        <span class="song-length"></span>
+
+        </div>
+        <div class="song">
+
+        <span class="song-name" id="song5"></span>
+
+        <span class="song-artist"></span>
+
+        <span class="song-album"></span>
+
+        <span class="song-length"></span>
+
+        </div>
+
+
+        </div>
+        <div class="current-song-wrapper">
+           <img class="current-song-image">
+           <div>
+           <p class="current-song-name"></p>
+           <p class="current-song-album"></p>
+           </div>
+           </div>
+            </section>
+
+
+            <footer>
+
+                <div class="controls">
+
+                    <div class="player-buttons">
+
+                        <i class="fa fa-play clickable play-icon" aria-hidden="true" ></i>
+
+                    </div>
+
+                    <div class="progress-wrapper">
+
+                        <span class="time-elapsed"></span>
+
+                        <div class="player-progress">
+
+                            <div class="progress-filled"> </div>
+
+                        </div>
+
+                        <span class="song-duration"></span>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="jquery.js">
+
+    </script>
+    <script>
+
+
+      //* play song*//
+
+         function toggleSong(){
+                     var song = document.querySelector('audio');
+                     if(song.paused == true) {
+                            console.log('Playing');
+                           $('.play-icon').removeClass('fa-play').addClass('fa-pause');
+                     song.play();
+                     }
+                     else {
+                          console.log('Pausing');
+                          $('.play-icon').removeClass('fa-pause').addClass('fa-play');
+                          song.pause();
+                        }
+                   }
+
+              $('.play-icon').on('click', function() {
+                       toggleSong();
+                      });
+
+
+
+                      //* welcome screen*//
+
+                        $('.welcome-screen button').on('click', function() {
+
+                          var name = $('#name-input').val();
+
+                          if (name.length > 2) {
+
+                              var message = "Welcome, " + name;
+
+                              $('.main .user-name').text(message);
+
+                              $('.welcome-screen').addClass('hidden');
+
+                              $('.main').removeClass('hidden');
+
+                          } else {
+                      $('#name-input').addClass('error');
+                            }
+                        });
+
+
+     //* keypress play song*//
+        $('body').on('keypress',function(event) {
+            if (event.keyCode == 32)
+              {
+                toggleSong();
+            }
+          });
+
+          //* progress bar*//
+          window.onload = function() {
+             changeCurrentSongDetails(songs[0]);
+            console.log("hy");
+      updateCurrentTime();
+      setInterval(function() {
+      updateCurrentTime();
+      },1000);
+
+      for(var i =0; i <songs.length;i++) {
+      var obj = songs[i];
+      var name = '#song' + (i+1);
+      var song = $(name);
+       song.filter('.song-name').text(obj.name);
+
+    song.filter('.song-artist').text(obj.artist);
+
+      song.filter('.song-album').text(obj.album);
+
+      song.filter('.song-length').text(obj.duration);
+
+      addSongNameClickEvent(obj,i+1);
+      }
+
+      }
+             function TimeFormat(time)
+            {
+                var hr=~~(time/3600);
+                var min=~~((time%3600)/60);
+                var sec=time%60;
+                var result="";
+                if(hr>0)
+                {
+                  //r+=""+hr+":"+":"+min+":"+sec;
+                  result += "" + hr + ":" + (min< 10 ? "0" : "");
+
+                }
+                result += "" + min + ":" + (sec< 10 ? "0" : "");
+                result += "" + sec;
+                return result;
+              }
+
+            function updateCurrentTime(){
+                var s=document.querySelector('audio');
+                var currentTime=Math.floor(s.currentTime);
+
+                currentTime = TimeFormat(currentTime);
+                  $('.time-elapsed').text(currentTime);
+                  var duration=Math.floor(s.duration);
+
+                  duration = TimeFormat(duration);
+                  $('.song-duration').text(duration);
+                     }
+
+    //*add song list*//
+        var songs = [{
+          'name': 'Badri Ki Dulhania (Title Track)',
+          'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
+          'album': 'Badrinath ki Dulhania',
+          'duration': '2:56',
+          'fileName': 'song1.mp3',
+          'img':'song1.jpg'
+          },
+          {
+              'name': 'Humma Song',
+              'artist': 'Badshah, Jubin Nautiyal, Shashaa Tirupati',
+              'album': 'Ok Jaanu',
+              'duration': '3:15',
+                'fileName': 'song2.mp3',
+                'img':'song2.jpg'
+              },
+              {
+                'name': 'Nashe Si Chadh Gayi',
+                  'artist': 'Arijit Singh',
+                  'album': 'Befikre',
+                  'duration': '2:34',
+                    'fileName': 'song3.mp3',
+                    'img':'song3.jpg'
+                  },
+                {
+                'name': 'The Breakup Song',
+                'artist': 'Nakash Aziz, Arijit Singh, Badshah, Jonita Gandhi',
+                'album': 'Ae Dil Hai Mushkil',
+                'duration': '2:29',
+                'fileName': 'song4.mp3',
+                'img':'song4.jpg'
+              },
+              {
+              'name': 'Melt the snow',
+              'artist': 'Nakash Aziz, Arijit Singh, Badshah, Jonita Gandhi',
+              'album': 'hollywood',
+              'duration': '2:29',
+              'fileName': 'song5.mp3',
+              'img':'song5.jpg'
+            }
+          ];
+
+    // for (var i = 0; i < fileNames.length ; i++) {
+    //     addSongNameClickEvent(fileNames[i],i)
+    // }
+
+
+
+
+    function addSongNameClickEvent(songObj,position) {
+      var songName=songObj.fileName;
+          var id = '#song' + position;
+          $(id).click(function() {
+          var audio = document.querySelector('audio');
+          var currentSong = audio.src;
+          if(currentSong.search(songName)!= -1)
+          {
+          toggleSong();
+          }
+          else {
+          audio.src = songName;
+
+          changeCurrentSongDetails(songobj);
+        }
+        toggleSong();
+          });
+    }
+
+    function changeCurrentSongDetails(songObj) {
+      console.log("hello");
+    $('.current-song-image').attr('src','img/' + songObj.image)
+    $('.current-song-name').text(songObj.name)
+    $('.current-song-album').text(songObj.album)
+}
+
+    </script>
+
+
+</body>
+</html>

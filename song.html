@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Song App</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\saurabh patel\Desktop\html,css\jsproject\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main1.css">
+</head>
+
+<body>
+    <div class="wrapper">
+    <section class="welcome-screen hidden">
+     <h1> Welcome to Songify </h1>
+     <h3> Enter name to access your account </h3>
+      <div class="input-wrapper">
+      <input type="text" placeholder="Name" id="name-input">
+       <button> Go </button>
+         </div>
+       </section>
+    <div class="main">
+    <header><div  class="right floated user-name"></div></header>
+     <section class="content">
+      <audio  src="C:\Users\saurabh patel\Desktop\html,css\jsproject\song.mp3" autoplay="autoplay"></audio>
+     </section>
+    <footer>
+      <div class="controls">
+      <span class="time-elapsed"></span> <sapn class="song-duration"></span>
+      <p><i class="fa fa-play clickable play-icon" aria-hidden="true" onclick="toggleSong()"></i></p>
+      </div>
+    </footer>
+     </div></div>
+<script src="jquery.js"></script>
+  <script>
+  function toggleSong(){
+    $('.play-icon').on('click',function(){
+      var a1=document.querySelector('audio');
+       if(a1.paused==true)
+         {
+           $('.play-icon').removeClass('fa-play');
+           $('.play-icon').addClass('fa-pause');
+           a1.play();
+       }
+   else
+     { $('.play-icon').removeClass('fa-pause').addClass('fa-play');
+        a1.pause();
+      }
+    });
+  }
+
+  $('body').on('keypress',function(event){
+    if(event.keyCode==32)
+    {
+      toggleSong();
+    }
+
+    });
+   function CurrentTimeUpdate(){
+      var s1=document.querySelector('audio');
+      var currenttime=Math.floor(s1.currentTime);
+          currentTime=convertTime(currentTime);
+      var duration=Math.floor(s1.duration);
+      duration=convertTime(duration);
+      $('.time-elapsed').text(currenttime);
+       $('.song-duration').text(duration);
+      }
+
+    window.onload=function(){
+      setInterval(function(){
+        CurrentTimeUpdate();},1000
+      );
+    }
+    function convertTime(time)
+    {
+          var hour=~~(time%3600);
+          var min=~~(time%3600)*60;
+        var sec=~~(time%60);
+        var r=hour+":"+min+":"+sec;
+        return r;
+    }
+
+
+ </script>
+</body>
+</html>
