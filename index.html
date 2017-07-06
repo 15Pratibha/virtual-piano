@@ -137,8 +137,11 @@
                 <div class="controls">
 
                     <div class="player-buttons">
-
+<i class="fa fa-step-backward clickable step-backward" aria-hidden="true" ></i>
                         <i class="fa fa-play clickable play-icon" aria-hidden="true" ></i>
+                        <i class="fa fa-step-forward clickable step-forward" aria-hidden="true" ></i>
+                          <i class="fa fa-volume-up clickable volume-up" aria-hidden="true" ></i>
+
 
                     </div>
 
@@ -173,11 +176,13 @@
       //* play song*//
 
          function toggleSong(){
+
                      var song = document.querySelector('audio');
                      if(song.paused == true) {
                             console.log('Playing');
                            $('.play-icon').removeClass('fa-play').addClass('fa-pause');
                      song.play();
+
                      }
                      else {
                           console.log('Pausing');
@@ -187,10 +192,42 @@
                    }
 
               $('.play-icon').on('click', function() {
+
+
                        toggleSong();
+                         //moveprogressbar();
                       });
+                      //for forward song//
+                      $('.step-forward').on('click', function() {
+                        console.log("patel");
+                        var obj,i;
+                        addSongNameClickEvent(obj,i+2);
+                // moveprogressbar();
+               });
+                //forward function//
 
 
+                //mute function//
+                function pause(){
+                  var m=document.querySelector('audio');
+                      console.log('muted');
+                    if(m.muted)
+                    {
+
+                      m.muted=false;
+                      $('.volume-up').removeClass('fa-volume-off').addClass('fa-volume-up');
+
+                    }
+                    else {
+
+                        m.muted=true;
+                        $('.volume-up').removeClass('fa-volume-up').addClass('fa-volume-off');
+                      }
+
+                }
+                $('.volume-up').on('click', function() {
+                          pause();
+                        });
 
                       //* welcome screen*//
 
@@ -216,7 +253,7 @@
 
      //* keypress play song*//
         $('body').on('keypress',function(event) {
-            if (event.keyCode == 32)
+            if (event.keyCode == 32 && target.tagName!='INPUT')
               {
                 toggleSong();
             }
@@ -351,6 +388,22 @@
     $('.current-song-name').text(songObj.name)
     $('.current-song-album').text(songObj.album)
 }
+  function moveprogressbar()
+  { console.log("pratibha");
+    var width=0;
+    var move=document.querySelector('.player-progress');
+      var i=setInterval(frame,10);
+      function frame(){
+         if(width>=100)
+         {
+           clearInterval(i);
+         }
+         else{
+           width++;
+          //fill.style.width=width+'%';
+         }
+      }
+  }
 
     </script>
 
