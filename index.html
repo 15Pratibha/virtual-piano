@@ -41,7 +41,7 @@
         <div class="main">
 
             <header>
-
+              <form><input type="text" placeholder="search" class="search" id="input"><span><input class="button-search" type="button" value="search"></span></form>
                 <div class="right floated user-name"> </div>
 
             </header>
@@ -185,39 +185,77 @@
                    }
 
               $('.play-icon').on('click', function() {
-
-
                        toggleSong();
                          //moveprogressbar();
                       });
+                      //search the song//
+
+                /*   $('.button-search').on('click', function() {
+                         search();
+                       });
+
+                            function search(){
+                              var name = $('#input').val();
+
+                               console.log(name);
+                               var s=songs.find(name);
+                               console.log(s);
+                             }
+
                       //for forward song//
+                      function changeSong(){
+                        var ar=songs[playingno].fileName;
+                        var s1=document.querySelector('audio');
+                        s1.src=ar;
+                        toggleSong();
+                      }*/
+                      var playingno=0;
                       $('.step-forward').on('click', function() {
                         console.log("patel");
-                        var obj,i;
-                        addSongNameClickEvent(obj,i+2);
-                // moveprogressbar();
+                        if(playingno==songs.length-1)
+                        {
+                          playingno=0;;
+                          changeSong();
+                        }
+                      else {
+                        playingno++;
+                        changeSong();
+
+                      }
+
                });
-                //forward function//
+               //back song//
+               $('.step-backward').on('click', function() {
+                 console.log("patel");
+                 if(playingno==0)
+                 {
+                   playingno=songs.length-1;
+                   changeSong();
+                 }
+               else {
+                 playingno--;
+                 changeSong();
 
+               }
 
+        });
+
+                 //forward function//
                 //mute function//
                 function pause(){
                   var m=document.querySelector('audio');
                       console.log('muted');
                     if(m.muted)
-                    {
-
-                      m.muted=false;
+                    {  m.muted=false;
                       $('.volume-up').removeClass('fa-volume-off').addClass('fa-volume-up');
-
-                    }
+                       }
                     else {
-
                         m.muted=true;
                         $('.volume-up').removeClass('fa-volume-up').addClass('fa-volume-off');
                       }
 
                 }
+
                 $('.volume-up').on('click', function() {
                           pause();
                         });
@@ -377,26 +415,21 @@
 
     function changeCurrentSongDetails(songObj) {
       console.log("hello");
-    $('.current-song-image').attr('src','/img/' + songObj.image)
+    $('.current-song-image').attr('src','img/' + songObj.image)
     $('.current-song-name').text(songObj.name)
     $('.current-song-album').text(songObj.album)
 }
   function moveprogressbar()
-  { console.log("pratibha");
-    var width=0;
-    var move=document.querySelector('.player-progress');
-      var i=setInterval(frame,10);
-      function frame(){
-         if(width>=100)
-         {
-           clearInterval(i);
-         }
-         else{
-           width++;
-          //fill.style.width=width+'%';
-         }
-      }
+  {
+    var song=document.querySelector('audio');
+    var currenttime=song.currenttime;
+    var duration=song.duration;
+    var per=(currenttime/duration)*100;
+     $('.progress-filled').css('width',per+"%");
   }
+  $('.player-progress').on('click', function() {
+
+          });
 
     </script>
 

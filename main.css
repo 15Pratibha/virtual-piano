@@ -210,8 +210,17 @@ h1 {
     margin-left: 6px;
 
 }
+.button-search{
+    height:20.5px;
 
+}
 
+.search{
+  width:200px;
+  height:20px;
+  background-color: white;
+  margin-left:900px;
+}
 
 .progress-filled {
 
