@@ -28,8 +28,14 @@ body {
     margin: 0;
 
     font-size: 16px;
-    background-image: url("image.png");
 
+
+}
+  .main{
+    background-image: url("image.jpg")!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility:visible;
 }
 
 
@@ -85,8 +91,8 @@ h1 {
     flex-direction: column;
 
     color: white;
+  text-decoration-style: solid;
 
-    background-color: #1f1f1f;
 
 }
 
@@ -110,7 +116,7 @@ h1 {
 
     flex:1;
 
-    background-color: #1f1f1f;
+
 
 }
 
