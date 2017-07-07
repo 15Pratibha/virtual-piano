@@ -10,7 +10,7 @@
 
     <title> Song App</title>
 
-    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css\font-awesome.css">
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
@@ -61,32 +61,28 @@
         <div> Duration </div>
 
         </div>
-           <div>
+
         <div class="song-list">
+               <div class="song" id="song1">
 
-        <div class="song" id="song1">
+                    <span class="song-name" ></span>
 
-                <span class="song-name" ></span>
+                    <span class="song-artist"></span>
+
+                    <span class="song-album"></span>
+
+                    <span class="song-length"></span>
+                </div>
+             <div class="song"  id="song2">
+                 <span class="song-name"></span>
 
                 <span class="song-artist"></span>
 
                 <span class="song-album"></span>
 
                 <span class="song-length"></span>
-
-        </div>
-        <div class="song"  id="song2">
-
-              <span class="song-name"></span>
-
-              <span class="song-artist"></span>
-
-              <span class="song-album"></span>
-
-              <span class="song-length"></span>
-
-        </div>
-        <div class="song" id="song3">
+             </div>
+         <div class="song" id="song3">
 
               <span class="song-name" ></span>
 
@@ -96,7 +92,7 @@
 
               <span class="song-length"></span>
 
-        </div>
+          </div>
         <div class="song" id="song4">
 
               <span class="song-name" ></span>
@@ -117,11 +113,8 @@
               <span class="song-album"></span>
 
               <span class="song-length"></span>
-
           </div>
       </div>
-
-        </div>
         <div class="current-song-wrapper">
            <img class="current-song-image">
            <div>
@@ -272,13 +265,13 @@
       var obj = songs[i];
       var name = '#song' + (i+1);
       var song = $(name);
-       song.filter('.song-name').text(obj.name);
+       song.find('.song-name').text(obj.name);
 
-    song.filter('.song-artist').text(obj.artist);
+    song.find('.song-artist').text(obj.artist);
 
-      song.filter('.song-album').text(obj.album);
+      song.find('.song-album').text(obj.album);
 
-      song.filter('.song-length').text(obj.duration);
+      song.find('.song-length').text(obj.duration);
 
       addSongNameClickEvent(obj,i+1);
       }
