@@ -20,6 +20,7 @@
 
 <body >
 
+
     <div class="wrapper">
 
         <section class="welcome-screen hidden">
@@ -53,71 +54,79 @@
               <audio src="song.mp3"></audio>
 
 
-                <div class="list-headers">
+              <table id="songs" cellpadding="7" cellspacing="2">
 
-        <div> Title </div>
+           <thead class="list-headers">
 
-        <div> Artist </div>
+             <tr>
 
-        <div> Album </div>
+               <td> TITLE </td>
 
-        <div> Duration </div>
+               <td> ARTIST </td>
 
-        </div>
+               <td> ALBUM </td>
 
-        <div class="song-list">
-               <div class="song" id="song1">
+               <td> <span class="fa fa-calendar-plus-o"></span> </td>
 
-                    <span class="song-name" ></span>
+             </tr>
 
-                    <span class="song-artist"></span>
+           </thead>
 
-                    <span class="song-album"></span>
+           <!-- <div class="song-list"> -->
 
-                    <span class="song-length"></span>
-                </div>
-             <div class="song"  id="song2">
-                 <span class="song-name"></span>
+             <tbody>
 
-                <span class="song-artist"></span>
+               <tr class="song" id="song1">
 
-                <span class="song-album"></span>
+                 <td class="song-name"></td>
 
-                <span class="song-length"></span>
-             </div>
-         <div class="song" id="song3">
+                 <td class="song-artist"></td>
 
-              <span class="song-name" ></span>
+                 <td class="song-album"></td>
 
-              <span class="song-artist"></span>
+                 <td class="song-length"></td>
 
-              <span class="song-album"></span>
+               </tr>
 
-              <span class="song-length"></span>
+               <tr class="song" id="song2">
 
-          </div>
-        <div class="song" id="song4">
+                 <td class="song-name"></td>
 
-              <span class="song-name" ></span>
+                 <td class="song-artist"></td>
 
-              <span class="song-artist"></span>
+                 <td class="song-album"></td>
 
-              <span class="song-album"></span>
+                 <td class="song-length"></td>
 
-              <span class="song-length"></span>
+               </tr>
 
-        </div>
-        <div class="song" id="song5">
+               <tr class="song" id="song3">
 
-              <span class="song-name" ></span>
+                 <td class="song-name"></td>
 
-              <span class="song-artist"></span>
+                 <td class="song-artist"></td>
 
-              <span class="song-album"></span>
+                 <td class="song-album"></td>
 
-              <span class="song-length"></span>
-          </div>
-      </div>
+                 <td class="song-length"></td>
+
+               </tr>
+
+               <tr class="song" id="song4">
+
+                 <td class="song-name"></td>
+
+                 <td class="song-artist"></td>
+
+                 <td class="song-album"></td>
+
+                 <td class="song-length"></td>
+
+               </tr>
+
+             </tbody>
+
+           </table>
         <div class="current-song-wrapper">
            <img class="current-song-image">
            <div>
@@ -203,7 +212,7 @@
                                console.log(name);
                                var s=songs.find(name);
                                console.log(s);
-                             }
+                             }*/
 
                       //for forward song//
                       function changeSong(){
@@ -211,7 +220,7 @@
                         var s1=document.querySelector('audio');
                         s1.src=ar;
                         toggleSong();
-                      }*/
+                      }
                       var playingno=0;
                       $('.step-forward').on('click', function() {
                         console.log("patel");
@@ -349,8 +358,8 @@
 
     //*add song list*//
         var songs = [{
-          'name': 'Badri Ki Dulhania (Title Track)',
-          'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
+          'name': 'Badri Ki Dulhania',
+          'artist': 'Neha Kakkar, Monali Thakur,Dev Negi',
           'album': 'Badrinath ki Dulhania',
           'duration': '2:56',
           'fileName': 'song1.mp3',

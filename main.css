@@ -265,8 +265,9 @@ h1 {
 
 }
 
-
-
+th{
+  resize:both;
+}
 .list-headers > div {
 
     width: 150px;
