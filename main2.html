@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <script src="mian2.js"></script
+  <script src="audiosynth.js"></script>
+</head>
+<body>
+  <div class="keyboard-option">Sound<br>
+    <select id="sound">
+      <option value="0" selected="">keyboard</option>
+      <option value="1" selected="">Organ</option>
+      <option value="2" selected="">Acoustic Guitar</option>
+      <option value="3" selected="">EDM,bro!</option>
+    </select>
+  </div>
+<div class="keyboard-holder" id="keyboard" style="width: 840px;">
+    <div class="white key" id="KEY_C,1" style="left:0px; width:40px;height:200px;">
+      <div class="label">
+            <b>Q</b>
+          <br>
+          <br>
+          C
+          <span value="-1" name="OCTAVE_LABEL">3</span>
+      </div>
+      </div>
+  <div class="black key" id="KEY_C,#" style="left:25px; width:30px;height:120px;">
+  <div class="label">
+              <b>2</b>
+            <br>
+            <br>
+            C
+    <span value="-1" name="OCTAVE_LABEL">3</span>
+    </div>
+    </div>
+    <div class="white key" id="KEY_D,-1" style="left:40px; width:40px;height:200px;">
+      <div class="label">
+            <b>W</b>
+          <br>
+          <br>
+          D
+          <span value="-1" name="OCTAVE_LABEL">3</span>
+      </div>
+      </div>
+      <div class="black key" id="KEY_D,-1" style="left:65px; width:30px;height:120px;">
+        <div class="label">
+              <b>3</b>
+            <br>
+            <br>
+            D
+            <span value="-1" name="OCTAVE_LABEL">3</span>#
+        </div>
+        </div>
+        <div class="white key" id="KEY_E,1" style="left:80px; width:40px;height:200px;">
+          <div class="label">
+                <b>E</b>
+              <br>
+              <br>
+              E
+              <span value="-1" name="OCTAVE_LABEL">3</span>
+          </div>
+          </div>
+          <div class="white key" id="KEY_F,-1" style="left:120px; width:40px;height:200px;">
+            <div class="label">
+                  <b>R</b>
+                <br>
+                <br>
+                F
+                <span value="-1" name="OCTAVE_LABEL">3</span>
+            </div>
+            </div>
+            <div class="black key" id="KEY_F#,-1" style="left:145px; width:30px;height:120px;">
+              <div class="label">
+                    <b>5</b>
+                  <br>
+                  <br>
+                  F
+                  <span value="-1" name="OCTAVE_LABEL">3</span>
+                  #
+              </div>
+              </div>
+
+          <div class="white key" id="KEY_G,-1" style="left:160px; width:40px;height:200px;">
+                  <div class="label">
+                        <b>T</b>
+                      <br>
+                      <br>
+                      G
+                      <span value="-1" name="OCTAVE_LABEL">3</span>
+                  </div>
+                  </div>
+
+                  <div class="black key" id="KEY_G#,-1" style="left:185px; width:30px;height:120px;">
+                    <div class="label">
+                          <b>6</b>
+                        <br>
+                        <br>
+                        G
+                        <span value="-1" name="OCTAVE_LABEL">3</span>
+                        #
+                    </div>
+                    </div>
+                    <div class="white key" id="KEY_A,-1" style="left:200px; width:40px;height:200px;">
+                      <div class="label">
+                            <b>Y</b>
+                          <br>
+                          <br>
+                          A
+                          <span value="-1" name="OCTAVE_LABEL">3</span>
+                      </div>
+                      </div>
+                      <div class="black key" id="KEY_A#,-1" style="left:225px; width:30px;height:120px;">
+                        <div class="label">
+                              <b>7</b>
+                            <br>
+                            <br>
+                            A
+                            <span value="-1" name="OCTAVE_LABEL">3</span>
+                            #
+                        </div>
+                        </div>
+                        <div class="white key" id="KEY_B,-1" style="left:240px; width:40px;height:200px;">
+                          <div class="label">
+                                <b>U</b>
+                              <br>
+                              <br>
+                              B
+                              <span value="-1" name="OCTAVE_LABEL">3</span>
+                          </div>
+                          </div>
+                          <div class="white key" id="KEY_c,-1" style="left:280px; width:40px;height:200px;">
+                            <div class="label">
+                                  <b>I</b>
+                                <br>
+                                <br>
+                                C
+                                <span value="0" name="OCTAVE_LABEL">4</span>
+                            </div>
+                            </div>
+                            <div class="black key" id="KEY_C#,0" style="left:305px; width:30px;height:120px;">
+                              <div class="label">
+                                    <b>9</b>
+                                  <br>
+                                  <br>
+                                  C
+                                  <span value="0" name="OCTAVE_LABEL">4</span>
+                                  #
+                              </div>
+                              </div>
+                              <div class="white key" id="KEY_D,0" style="left:320px; width:40px;height:200px;">
+                                <div class="label">
+                                      <b>O</b>
+                                    <br>
+                                    <br>
+                                    D
+                                    <span value="0" name="OCTAVE_LABEL">4</span>
+                                </div>
+                                </div>
+                                <div class="black key" id="KEY_D#,0" style="left:345px; width:30px;height:120px;">
+                                  <div class="label">
+                                        <b>0</b>
+                                      <br>
+                                      <br>
+                                      D
+                                      <span value="0" name="OCTAVE_LABEL">4</span>
+                                      #
+                                  </div>
+                                  </div>
+                                  <div class="white key" id="KEY_E,0" style="left:360px; width:40px;height:200px;">
+                                    <div class="label">
+                                          <b>P</b>
+                                        <br>
+                                        <br>
+                                        E
+                                        <span value="0" name="OCTAVE_LABEL">4</span>
+                                    </div>
+                                    </div>
+                                    <div class="white key" id="KEY_F,0" style="left:400px; width:40px;height:200px;">
+                                      <div class="label">
+                                            <b>[</b>
+                                          <br>
+                                          <br>
+                                          F
+                                          <span value="0" name="OCTAVE_LABEL">4</span>
+                                      </div>
+                                      </div>
+                                    <div class="black key" id="KEY_D#,0" style="left:425px; width:30px;height:120px;">
+                                      <div class="label">
+                                            <b>=</b>
+                                          <br>
+                                          <br>
+                                          F
+                                          <span value="0" name="OCTAVE_LABEL">4</span>
+                                          #
+                                      </div>
+                                      </div>
+                                      <div class="white key" id="KEY_G,0" style="left:440px; width:40px;height:200px;">
+                                        <div class="label">
+                                              <b>]</b>
+                                            <br>
+                                            <br>
+                                            G
+                                            <span value="0" name="OCTAVE_LABEL">4</span>
+                                        </div>
+                                        </div>
+                                        <div class="black key" id="KEY_G#,0" style="left:465px; width:30px;height:120px;">
+                                          <div class="label">
+                                                <b>A</b>
+                                              <br>
+                                              <br>
+                                              G
+                                              <span value="0" name="OCTAVE_LABEL">4</span>
+                                              #
+                                          </div>
+                                          </div>
+                                          <div class="white key" id="KEY_A,0" style="left:480px; width:40px;height:200px;">
+                                            <div class="label">
+                                                  <b>Z</b>
+                                                <br>
+                                                <br>
+                                                A
+                                                <span value="0" name="OCTAVE_LABEL">4</span>
+                                            </div>
+                                            </div>
+                                            <div class="black key" id="KEY_A#,0" style="left:505px; width:30px;height:120px;">
+                                              <div class="label">
+                                                    <b>S</b>
+                                                  <br>
+                                                  <br>
+                                                  A
+                                                  <span value="0" name="OCTAVE_LABEL">4</span>
+                                                  #
+                                              </div>
+                                              </div>
+                                              <div class="white key" id="KEY_B,0" style="left:520px; width:40px;height:200px;">
+                                                <div class="label">
+                                                      <b>X</b>
+                                                    <br>
+                                                    <br>
+                                                    B
+                                                    <span value="0" name="OCTAVE_LABEL">4</span>
+                                                </div>
+                                                </div>
+                                                <div class="white key" id="KEY_C,1" style="left:560px; width:40px;height:200px;">
+                                                  <div class="label">
+                                                        <b>C</b>
+                                                      <br>
+                                                      <br>
+                                                      C
+                                                      <span value="1" name="OCTAVE_LABEL">5</span>
+                                                  </div>
+                                                  </div>
+                                                  <div class="black key" id="KEY_C#,0" style="left:585px; width:30px;height:120px;">
+                                                    <div class="label">
+                                                          <b>F</b>
+                                                        <br>
+                                                        <br>
+                                                        C
+                                                        <span value="1" name="OCTAVE_LABEL">5</span>
+                                                        #
+                                                    </div>
+                                                    </div>
+                                                    <div class="white key" id="KEY_D,1" style="left:600px; width:40px;height:200px;">
+                                                      <div class="label">
+                                                            <b>V</b>
+                                                          <br>
+                                                          <br>
+                                                          D
+                                                          <span value="1" name="OCTAVE_LABEL">5</span>
+                                                      </div>
+                                                      </div>
+                                                      <div class="black key" id="KEY_D#,1" style="left:625px; width:30px;height:120px;">
+                                                        <div class="label">
+                                                              <b>G</b>
+                                                            <br>
+                                                            <br>
+                                                            D
+                                                            <span value="1" name="OCTAVE_LABEL">5</span>
+                                                            #
+                                                        </div>
+                                                        </div>
+                                                        <div class="white key" id="KEY_E,1" style="left:640px; width:40px;height:200px;">
+                                                          <div class="label">
+                                                                <b>B</b>
+                                                              <br>
+                                                              <br>
+                                                              E
+                                                              <span value="1" name="OCTAVE_LABEL">5</span>
+                                                          </div>
+                                                          </div>
+                                                          <div class="white key" id="KEY_F,1" style="left:680px; width:40px;height:200px;">
+                                                            <div class="label">
+                                                                  <b>N</b>
+                                                                <br>
+                                                                <br>
+                                                                F
+                                                                <span value="1" name="OCTAVE_LABEL">5</span>
+                                                            </div>
+                                                            </div>
+                                                            <div class="black key" id="KEY_F#,1" style="left:705px; width:30px;height:120px;">
+                                                              <div class="label">
+                                                                    <b>J</b>
+                                                                  <br>
+                                                                  <br>
+                                                                  F
+                                                                  <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                  #
+                                                              </div>
+                                                              </div>
+                                                              <div class="white key" id="KEY_G,1" style="left:720px; width:40px;height:200px;">
+                                                                <div class="label">
+                                                                      <b>M</b>
+                                                                    <br>
+                                                                    <br>
+                                                                    G
+                                                                    <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                </div>
+                                                                </div>
+                                                                <div class="black key" id="KEY_G#,1" style="left:745px; width:30px;height:120px;">
+                                                                  <div class="label">
+                                                                        <b>K</b>
+                                                                      <br>
+                                                                      <br>
+                                                                      G
+                                                                      <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                      #
+                                                                  </div>
+                                                                  </div>
+                                                                  <div class="white key" id="KEY_A,1" style="left:760px; width:40px;height:200px;">
+                                                                    <div class="label">
+                                                                          <b>,</b>
+                                                                        <br>
+                                                                        <br>
+                                                                        A
+                                                                        <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="black key" id="KEY_A#,1" style="left:785px; width:30px;height:120px;">
+                                                                      <div class="label">
+                                                                            <b>L</b>
+                                                                          <br>
+                                                                          <br>
+                                                                          A
+                                                                          <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                          #
+                                                                      </div>
+                                                                      </div>
+                                                          <div class="white key" id="KEY_B,1" style="left:800px; width:40px;height:200px;">
+                                                            <audio id="audio" src="F:\jsproject/beep-0.wav" autostart="false"></audio>
+                                                                        <div class="label">
+                                                                              <b>.</b>
+                                                                            <br>
+                                                                            <br>
+                                                                            B
+                                                                            <span value="1" name="OCTAVE_LABEL">5</span>
+                                                                        </div>
+                                                                        </div>
+                                                                        <script src="jquery.js"></script>
+                                                                        <script>
+                                                                        $('#KEY_B,1').on('click',function(){
+                                                                        playSound();
+
+                                                                        console.log("hy");
+                                                                        });
+                                                                  function playSound() {
+                                                                        var sound = document.getElementById('audio');
+                                                                        console.log("hy");
+                                                                        sound.play();
+                                                                        }
+
+                                                                        </script>
+                                                                        <script>
+                                                                        var a=ne AudioSynthView();
+                                                                        a.draw();
+                                                                        </script>
+
+                                                                        <script>
+                                                                        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44899638-2', 'keithwhor.com');
+  ga('send', 'pageview');
+
+</script>
+                                                                        </script>
+</body>
+</html>

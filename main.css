@@ -32,7 +32,7 @@ body {
 
 }
   .main{
-    background-image: url("image.jpg")!important;
+    background-image: url("back3.jpg")!important;
     background-repeat: no-repeat;
     background-size: cover;
     backface-visibility:visible;
@@ -60,10 +60,23 @@ h1 {
 
 }
 
+a{
+  margin-left: 4px;
+  margin-bottom: 10px;
+
+  style:solid;
+  color: orangeRed;
+}
+button{
+  background-color: orangeRed;
+  color:white;
+}
 
 
 .welcome-screen {
-
+       background-image:url("image.jpg");
+       background-repeat: no-repeat;
+       background-size:cover;
     height: 100%;
 
     width: 100%;
@@ -75,11 +88,13 @@ h1 {
     justify-content: center;
 
     align-items: center;
+    color: orangeRed;
 
 }
 
-
-
+  .hidden{
+    display: none;
+  }
 .main {
 
     width: 100%;
@@ -148,11 +163,6 @@ h1 {
 
 
 
-.hidden {
-
-    display: none;
-
-}
 
 
 

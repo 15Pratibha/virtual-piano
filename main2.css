@@ -1,0 +1,61 @@
+body{
+  background-image: url("piano1.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.white{
+ background-color: #ffffff;
+ color:rgb(32,32,32);
+ z-index: 0;
+ text-shadow: 0px 1px 1px rgba(32,32,32,0.5);
+
+}
+.key .label{
+  position: absolute;
+  bottom: .5px;
+  text-align: center;
+  left:0px;
+  right: 0px;
+}
+.keyboard-option{
+  margin:30px 30px 30px 30px auto;
+  width:auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200px;
+  padding:100px 100px 100px 100px;
+    color:orangeRed;
+}
+
+
+.key{
+  position: absolute;
+  font-family:Helvetica;
+  font-weight: 100;
+  font-size: 12px;
+  border:1px solid rgba(32,32,32,0.5);
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+  box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+}
+.key:hover{
+  background-color: blue;
+}
+.black{
+ background-color:black;
+ color:#ffffff;
+ z-index: 1;
+ text-shadow: 0px -1px 1px rgba(255,255,255,.5);
+}
+ inline style{
+   left:145px;
+   width:30px;
+   height:120px;
+ }
+.keyboard-options
+{
+  text-align:center;
+}
+body{
+
+}
