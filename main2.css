@@ -2,6 +2,7 @@ body{
   background-image: url("piano1.png");
   background-size:cover;
   background-repeat: no-repeat;
+  padding:10px;
 }
 .white{
  background-color: #ffffff;
@@ -46,6 +47,8 @@ body{
  color:#ffffff;
  z-index: 1;
  text-shadow: 0px -1px 1px rgba(255,255,255,.5);
+ margin-bottom: 60px;
+ height:120px;
 }
  inline style{
    left:145px;
