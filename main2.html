@@ -2,16 +2,19 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="main2.css">
-  <script src="mian2.js"></script
   <script src="audiosynth.js"></script>
+  <script src="piano.js"></script>
+
+  <script src="jquery.js"></script>
+
 </head>
 <body>
   <div class="keyboard-option">Sound<br>
     <select id="sound">
-      <option value="0" selected="">keyboard</option>
-      <option value="1" selected="">Organ</option>
-      <option value="2" selected="">Acoustic Guitar</option>
-      <option value="3" selected="">EDM,bro!</option>
+      <option value="0" selected="" id="piano">piano</option>
+      <option value="1" selected=""id="organ">Organ</option>
+      <option value="2" selected="" id="guitar">Acoustic Guitar</option>
+      <option value="3" selected="" id="edm">EDM,bro!</option>
     </select>
   </div>
 <div class="keyboard-holder" id="keyboard" style="width: 840px;">
@@ -128,7 +131,7 @@
                               <span value="-1" name="OCTAVE_LABEL">3</span>
                           </div>
                           </div>
-                          <div class="white key" id="KEY_c,-1" style="left:280px; width:40px;height:200px;">
+                          <div class="white key" id="KEY_C,-1" style="left:280px; width:40px;height:200px;">
                             <div class="label">
                                   <b>I</b>
                                 <br>
@@ -355,36 +358,6 @@
                                                                             <span value="1" name="OCTAVE_LABEL">5</span>
                                                                         </div>
                                                                         </div>
-                                                                        <script src="jquery.js"></script>
-                                                                        <script>
-                                                                        $('#KEY_B,1').on('click',function(){
-                                                                        playSound();
 
-                                                                        console.log("hy");
-                                                                        });
-                                                                  function playSound() {
-                                                                        var sound = document.getElementById('audio');
-                                                                        console.log("hy");
-                                                                        sound.play();
-                                                                        }
-
-                                                                        </script>
-                                                                        <script>
-                                                                        var a=ne AudioSynthView();
-                                                                        a.draw();
-                                                                        </script>
-
-                                                                        <script>
-                                                                        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-44899638-2', 'keithwhor.com');
-  ga('send', 'pageview');
-
-</script>
-                                                                        </script>
 </body>
 </html>

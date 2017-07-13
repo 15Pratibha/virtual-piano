@@ -64,7 +64,7 @@ var Synth, AudioSynth, AudioSynthInstrument;
 				var noteList = {};
 				for(var k in this._notes) {
 					noteList[k] = {};
-				} 
+				}
 				octaveList.push(noteList);
 			}
 			f.push(octaveList);
@@ -113,7 +113,7 @@ var Synth, AudioSynth, AudioSynthInstrument;
 			var decayLen = (sampleRate * time) | 0;
 
 			for (var i = 0 | 0; i !== attackLen; i++) {
-		
+
 				val = volume * (i/(sampleRate*attack)) * waveFunc.call(waveBind, i, sampleRate, frequency, volume);
 
 				data[i << 1] = val;
@@ -274,7 +274,7 @@ Synth.loadSoundProfile({
 		vars.valueTable = !vars.valueTable?[]:vars.valueTable;
 		if(typeof(vars.playVal)=='undefined') { vars.playVal = 0; }
 		if(typeof(vars.periodCount)=='undefined') { vars.periodCount = 0; }
-	
+
 		var valueTable = vars.valueTable;
 		var playVal = vars.playVal;
 		var periodCount = vars.periodCount;
@@ -285,33 +285,33 @@ Synth.loadSoundProfile({
 		var resetPlay = false;
 
 		if(valueTable.length<=Math.ceil(period)) {
-	
+
 			valueTable.push(Math.round(Math.random())*2-1);
-	
+
 			return valueTable[valueTable.length-1];
-	
+
 		} else {
-	
+
 			valueTable[playVal] = (valueTable[playVal>=(valueTable.length-1)?0:playVal+1] + valueTable[playVal]) * 0.5;
-	
+
 			if(playVal>=Math.floor(period)) {
 				if(playVal<Math.ceil(period)) {
 					if((periodCount%100)>=p_hundredth) {
 						// Reset
 						resetPlay = true;
 						valueTable[playVal+1] = (valueTable[0] + valueTable[playVal+1]) * 0.5;
-						vars.periodCount++;	
+						vars.periodCount++;
 					}
 				} else {
-					resetPlay = true;	
+					resetPlay = true;
 				}
 			}
-	
+
 			var _return = valueTable[playVal];
 			if(resetPlay) { vars.playVal = 0; } else { vars.playVal++; }
-	
+
 			return _return;
-	
+
 		}
 	}
 },
@@ -346,5 +346,378 @@ Synth.loadSoundProfile({
 					base(i, sampleRate, frequency, 1.75)
 				)
 		);
+	}
+});
+//piano
+windows.onload=function(){
+	var instrument=0;}
+	//for piano
+	$('#piano').on('click',function(){
+		instrument=0;
+	})
+	$('#organ').on('click',function(){
+		instrument=1;
+	})
+	$('#guitar').on('click',function(){
+		instrument=2;
+	})
+	$('#edm').on('click',function(){
+		instrument=3;
+	})
+$('key_C').on('click',function(){
+	Synth.play(0,'C',3,2);
+	console.log(Synth.play(instrument,'C',3,2));
+});
+$('key_C,#').on('click',function(){
+	Synth.play(0,'C#',3,2);
+	console.log(Synth.play(instrument,'C#',3,2));
+});
+$('key_D,1').on('click',function(){
+	Synth.play(0,'D',3,2);
+	console.log(Synth.play(instrument,'D',3,2));
+});
+$('key_D,1').on('click',function(){
+	Synth.play(0,'D',3,2);
+	console.log(Synth.play(innstrument,'D',3,2);
+});
+
+$('KEY_E,1').on('click',function(){
+	Synth.play(0,'E',3,2);
+	console.log(Synth.play(0,'E',3,2));
+});
+$('KEY_F,-1').on('click',function(){
+	Synth.play(0,'F',3,2);
+	console.log(Synth.play(0,'F',3,2));
+});
+$('KEY_F#,-1').on('click',function(){
+	Synth.play(0,'F#',3,2);
+	console.log(Synth.play(0,'F#',3,2));
+});
+$('KEY_G,-1').on('click',function(){
+	Synth.play(0,'G',3,2);
+	console.log(Synth.play(0,'G',3,2));
+});
+$('KEY_F#,-1').on('click',function(){
+	Synth.play(0,'F#',3,2);
+	console.log(Synth.play(0,'F#',3,2));
+});
+$('KEY_A,-1').on('click',function(){
+	Synth.play(0,'A',3,2);
+	console.log(Synth.play(0,'A',3,2));
+});
+$('KEY_A#,-1').on('click',function(){
+	Synth.play(0,'A#',3,2);
+	console.log(Synth.play(0,'A#',3,2));
+});
+$('KEY_B,-1').on('click',function(){
+	Synth.play(0,'B',3,2);
+	console.log(Synth.play(0,'B',3,2));
+});
+$('KEY_C,-1').on('click',function(){
+	Synth.play(0,'C',4,2);
+	console.log(Synth.play(0,'C',4,2));
+});
+$('KEY_C#,0').on('click',function(){
+	Synth.play(0,'C#',4,2);
+	console.log(Synth.play(0,'C#',4,2));
+});
+$('KEY_D,0').on('click',function(){
+	Synth.play(0,'D',4,2);
+	console.log(Synth.play(0,'D',4,2));
+});
+$('KEY_D#,-1').on('click',function(){
+	Synth.play(0,'D#',4,2);
+	console.log(Synth.play(0,'D#',4,2));
+});
+$('KEY_E,0').on('click',function(){
+	Synth.play(0,'E',4,2);
+	console.log(Synth.play(0,'E',4,2));
+});
+$('KEY_F,0').on('click',function(){
+	Synth.play(0,'F',4,2);
+	console.log(Synth.play(0,'F',4,2));
+});
+$('KEY_D#,0').on('click',function(){
+	Synth.play(0,'D#',4,2);
+	console.log(Synth.play(0,'D#',4,2));
+});
+$('KEY_G,0').on('click',function(){
+	Synth.play(0,'G',4,2);
+	console.log(Synth.play(0,'G',4,2));
+});
+
+$('KEY_G#,0').on('click',function(){
+	Synth.play(0,'G#',4,2);
+	console.log(Synth.play(0,'G#',4,2));
+});
+$('KEY_A,0').on('click',function(){
+	Synth.play(0,'A',4,2);
+	console.log(Synth.play(0,'A',4,2));
+});
+$('KEY_A#,0').on('click',function(){
+	Synth.play(0,'A#',4,2);
+	console.log(Synth.play(0,'A#',4,2));
+});
+$('KEY_B,0').on('click',function(){
+	Synth.play(0,'B',4,2);
+	console.log(Synth.play(0,'B',4,2));
+});
+$('KEY_C,1').on('click',function(){
+	Synth.play(0,'C',5,2);
+	console.log(Synth.play(0,'C',5,2));
+});
+$('KEY_C#,1').on('click',function(){
+	Synth.play(0,'C#',5,2);
+	console.log(Synth.play(0,'C#',5,2));
+});
+$('KEY_D,1').on('click',function(){
+	Synth.play(0,'D',5,2);
+	console.log(Synth.play(0,'D',5,2));
+});$('KEY_D#,1').on('click',function(){
+	Synth.play(0,'D#',5,2);
+	console.log(Synth.play(0,'D#',5,2));
+});
+$('KEY_E,1').on('click',function(){
+	Synth.play(0,'E',5,2);
+	console.log(Synth.play(0,'E',5,2));
+});
+$('KEY_F,1').on('click',function(){
+	Synth.play(0,'F',5,2);
+	console.log(Synth.play(0,'F',5,2));
+});
+$('KEY_F#,1').on('click',function(){
+	Synth.play(0,'F#',5,2);
+	console.log(Synth.play(0,'F#',5,2));
+});
+$('KEY_G,1').on('click',function(){
+	Synth.play(0,'G',5,2);
+	console.log(Synth.play(0,'G',5,2));
+});
+$('KEY_G#,1').on('click',function(){
+	Synth.play(0,'G#',5,2);
+	console.log(Synth.play(0,'G#',5,2));
+});
+$('KEY_A,1').on('click',function(){
+	Synth.play(0,'A',5,2);
+	console.log(Synth.play(0,'A',5,2));
+});
+$('KEY_A#,1').on('click',function(){
+	Synth.play(0,'A#',5,2);
+	console.log(Synth.play(0,'A#',5,2));
+});
+$('KEY_B,1').on('click',function(){
+	Synth.play(0,'B',5,2);
+	console.log(Synth.play(0,'B',5,2));
+});
+//keypress
+$('body').on('keypress',function(){
+	if(event.key=='q')
+	{
+		Synth.play(instrument,'C',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='w')
+	{
+		Synth.play(instrument,'D',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='3')
+	{
+		Synth.play(instrument,'D#',3,2)
+	}
+});
+
+$('body').on('keypress',function(){
+	if(event.key=='e')
+	{
+		Synth.play(instrument,'E',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='r')
+	{
+		Synth.play(instrument,'F',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='5')
+	{
+		Synth.play(instrument,'F#',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='t')
+	{
+		Synth.play(instrument,'G',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='6')
+	{
+		Synth.play(instrument,'G#',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='y')
+	{
+		Synth.play(instrument,'A',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='7')
+	{
+		Synth.play(instrument,'A#',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='u')
+	{
+		Synth.play(instrument,'B',3,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='i')
+	{
+		Synth.play(instrument,'C',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='9')
+	{
+		Synth.play(instrument,'C#',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='o')
+	{
+		Synth.play(instrument,'D',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='O')
+	{
+		Synth.play(instrument,'D#',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='p')
+	{
+		Synth.play(instrument,'E',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='[')
+	{
+		Synth.play(instrument,'F',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='=')
+	{
+		Synth.play(instrument,'F#',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key==']')
+	{
+		Synth.play(instrument,'G',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='a')
+	{
+		Synth.play(instrument,'G#',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='z')
+	{
+		Synth.play(instrument,'A',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='s')
+	{
+		Synth.play(instrument,'A#',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='x')
+	{
+		Synth.play(instrument,'B',4,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='c')
+	{
+		Synth.play(instrument,'C',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='f')
+	{
+		Synth.play(instrument,'C#',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='v')
+	{
+		Synth.play(instrument,'D',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='g')
+	{
+		Synth.play(instrument,'D#',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='b')
+	{
+		Synth.play(instrument,'E',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='n')
+	{
+		Synth.play(instrument,'F',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='j')
+	{
+		Synth.play(instrument,'F#',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='m')
+	{
+		Synth.play(instrument,'G',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='k')
+	{
+		Synth.play(instrument,'G#',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key==',')
+	{
+		Synth.play(instrument,'A',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='1')
+	{
+		Synth.play(instrument,'A#',5,2)
+	}
+});
+$('body').on('keypress',function(){
+	if(event.key=='.')
+	{
+		Synth.play(instrument,'B',5,2)
 	}
 });
