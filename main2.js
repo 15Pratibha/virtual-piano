@@ -24,35 +24,58 @@ window.onload=function(){
 		instrument=3;
 	})
 
-$('#key_C1').on('click',function(){
 
-	Synth.play(0,'C',3,2);
 
-	console.log(Synth.play(instrument,'C',3,2));
-
-});
-
-$('#key_C#').on('click',function(){
+$('#KEY_C3').on('click',function(){
 
 	Synth.play(0,'C#',3,2);
 
-	console.log(Synth.play(instrument,'C#',3,2));
+
 
 });
 
-$('#key_D,1').on('click',function(){
+$('#KEY_C10').on('click',function(){
 
-	Synth.play(0,'D',3,2);
+	Synth.play(0,'C#',5,2);
 
-	console.log(Synth.play(instrument,'D',3,2));
+
+
+});
+$('#KEY_D21').on('click',function(){
+
+	Synth.play(0,'D#',5,2);
+
+
+
+});
+$('#KEY_D20').on('click',function(){
+
+	Synth.play(0,'D#',4,2);
+
+
+
+});
+$('#KEY_D17').on('click',function(){
+
+	Synth.play(0,'D#',3,2);
+
+
+
+});
+$('#KEY_C13').on('click',function(){
+
+	Synth.play(0,'C',3,2);
+
+
 
 });
 
-$('#key_D1').on('click',function(){
+
+$('#KEY_D3').on('click',function(){
 
 	Synth.play(0,'D',3,2);
 
-	console.log(Synth.play(innstrument,'D',3,2);
+
 
 });
 
@@ -62,7 +85,7 @@ $('#KEY_E1').on('click',function(){
 
 	Synth.play(0,'E',3,2);
 
-	console.log(Synth.play(0,'E',3,2));
+
 
 });
 
@@ -70,11 +93,11 @@ $('#KEY_F-1').on('click',function(){
 
 	Synth.play(0,'F',3,2);
 
-	console.log(Synth.play(0,'F',3,2));
+
 
 });
 
-$('#KEY_F#1').on('click',function(){
+$('#KEY_F2').on('click',function(){
 
 	Synth.play(0,'F#',3,2);
 
@@ -89,8 +112,15 @@ $('#KEY_G-1').on('click',function(){
 	console.log(Synth.play(0,'G',3,2));
 
 });
+$('#KEY_G1').on('click',function(){
 
-$('#KEY_F#1').on('click',function(){
+	Synth.play(0,'G#',3,2);
+
+	console.log(Synth.play(0,'G',3,2));
+
+});
+
+$('#KEY_F1').on('click',function(){
 
 	Synth.play(0,'F#',3,2);
 
@@ -106,7 +136,7 @@ $('#KEY_A-1').on('click',function(){
 
 });
 
-$('#KEY_A#1').on('click',function(){
+$('#KEY_A1').on('click',function(){
 
 	Synth.play(0,'A#',3,2);
 
@@ -130,7 +160,7 @@ $('#KEY_C-1').on('click',function(){
 
 });
 
-$('#KEY_C#0').on('click',function(){
+$('#KEY_C0').on('click',function(){
 
 	Synth.play(0,'C#',4,2);
 
@@ -146,7 +176,7 @@ $('#KEY_D0').on('click',function(){
 
 });
 
-$('#KEY_D#1').on('click',function(){
+$('#KEY_D1').on('click',function(){
 
 	Synth.play(0,'D#',4,2);
 
@@ -170,7 +200,7 @@ $('#KEY_F0').on('click',function(){
 
 });
 
-$('#KEY_D#0').on('click',function(){
+$('#KEY_D10').on('click',function(){
 
 	Synth.play(0,'D#',4,2);
 
@@ -188,7 +218,7 @@ $('#KEY_G0').on('click',function(){
 
 
 
-$('#KEY_G#0').on('click',function(){
+$('#KEY_G10').on('click',function(){
 
 	Synth.play(0,'G#',4,2);
 
@@ -204,7 +234,7 @@ $('#KEY_A0').on('click',function(){
 
 });
 
-$('#KEY_A#0').on('click',function(){
+$('#KEY_A10').on('click',function(){
 
 	Synth.play(0,'A#',4,2);
 
@@ -220,7 +250,7 @@ $('#KEY_B0').on('click',function(){
 
 });
 
-$('#KEY_C1').on('click',function(){
+$('#KEY_C15').on('click',function(){
 
 	Synth.play(0,'C',5,2);
 
@@ -228,7 +258,7 @@ $('#KEY_C1').on('click',function(){
 
 });
 
-$('#KEY_C#1').on('click',function(){
+$('#KEY_C01').on('click',function(){
 
 	Synth.play(0,'C#',5,2);
 
@@ -243,7 +273,7 @@ $('#KEY_D1').on('click',function(){
 	console.log(Synth.play(0,'D',5,2));
 
 });
-$('#KEY_D#1').on('click',function(){
+$('#KEY_D01').on('click',function(){
 
 	Synth.play(0,'D#',5,2);
 
@@ -251,7 +281,7 @@ $('#KEY_D#1').on('click',function(){
 
 });
 
-$('#KEY_E1').on('click',function(){
+$('#KEY_E15').on('click',function(){
 
 	Synth.play(0,'E',5,2);
 
@@ -267,7 +297,7 @@ $('#KEY_F1').on('click',function(){
 
 });
 
-$('#KEY_F#1').on('click',function(){
+$('#KEY_F21').on('click',function(){
 
 	Synth.play(0,'F#',5,2);
 
@@ -275,7 +305,7 @@ $('#KEY_F#1').on('click',function(){
 
 });
 
-$('#KEY_G1').on('click',function(){
+$('#KEY_G15').on('click',function(){
 
 	Synth.play(0,'G',5,2);
 
@@ -283,7 +313,7 @@ $('#KEY_G1').on('click',function(){
 
 });
 
-$('#KEY_G#1').on('click',function(){
+$('#KEY_G21').on('click',function(){
 
 	Synth.play(0,'G#',5,2);
 
@@ -291,7 +321,7 @@ $('#KEY_G#1').on('click',function(){
 
 });
 
-$('#KEY_A1').on('click',function(){
+$('#KEY_A15').on('click',function(){
 
 	Synth.play(0,'A',5,2);
 
@@ -299,7 +329,7 @@ $('#KEY_A1').on('click',function(){
 
 });
 
-$('#KEY_A#1').on('click',function(){
+$('#KEY_A21').on('click',function(){
 
 	Synth.play(0,'A#',5,2);
 
