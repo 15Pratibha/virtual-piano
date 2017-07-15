@@ -346,7 +346,7 @@ $('#KEY_B1').on('click',function(){
 });
 //keypress
 $('body').on('keypress', function(event) {
-	if (event.key=='Q'){
+	if (event.key=='q'){
 Synth.play(instrument, 'C', 3, 2);
 }
 });
