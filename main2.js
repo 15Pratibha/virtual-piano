@@ -351,14 +351,18 @@ Synth.play(instrument, 'C', 3, 2);
 }
 });
 
-
+$('body').on('keypress', function(event) {
+	if (event.key=='2'){
+Synth.play(instrument, 'C#', 3, 2);
+}
+});
 
 
 
 $('body').on('keypress', function() {
 	//var s=event.keyCode;
 	//console.log(s);
-	if (event.keyCode=='w'){
+	if (event.key=='w'){
 
   Synth.play(instrument, 'D', 3, 2)
 
